@@ -1,0 +1,36 @@
+// To push changes on githubpages
+// ng build --prod --base-href "https://Cl3r1k.github.io/MovieDatabaseApp/"
+// angular-cli-ghpages --repo="https://github.com/Cl3r1k/MovieDatabaseApp.git" --name=Cl3r1k --email=cl3r1k2@gmail.com --no-silent
+
+Commit message:
+
+    
+Todos:
+    New:
+        Current:
+
+            ☐ Add spinner before Angular main component loaded (use `https://jsfiddle.net/Cl3r1k/hyqdzgfn/`)
+            ☐ Add footer (preferably fixed bottom)
+                ☐ Steaky-footer on CSS Grid (look here `https://codepen.io/matuzo/pen/JOyzOj?editors=1100`)
+
+        ☐ Update Readme.md and .gitignore
+
+        ☐ Add absolute paths `@app` and `@env` to 'tsconfig.json'
+        ☐ Add autoincremented build info in the header of the app
+        
+
+        ☐ Correct e2e test
+        ☐ Write Unit tests
+
+        ☐ Deploy on gh-pages
+
+        Some ideas from:
+            `https://docs.google.com/spreadsheets/d/1PtRNZ9u5_RhMGx2u3s6VCn3JqmnNH59iq4pUx6TPcmU/edit#gid=0`
+            `https://whattomine.com`
+            `https://www.coincalculators.io/`
+            
+    Done:
+        
+
+    Canceled:
+        
