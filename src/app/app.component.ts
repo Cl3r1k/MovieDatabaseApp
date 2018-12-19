@@ -128,7 +128,6 @@ export class AppComponent implements OnInit {
 
     // GET movies
     getMoviesPopularList(pageNumber: number): Observable<Movie[]> {
-        // const options = this.getRequestOptions();
         return this._httpClient.get(this.API_URLS[0] + this.api_key + this.localePart + this.pagePart + pageNumber).pipe(
             map(response => {
                 console.log('incoming response:', response);
@@ -136,16 +135,6 @@ export class AppComponent implements OnInit {
             }),
             catchError(this.handleError));
     }
-
-    // getRequestOptions() {
-    //     const httpOptions = {
-    //         headers: new HttpHeaders({
-    //             'Authorization': 'Bearer ' + 'SomeKindOf.jwToken'
-    //         })
-    //     };
-
-    //     return httpOptions;
-    // }
 
     private handleError(error: Response | any) {
         if (error._body.type === 'error') {

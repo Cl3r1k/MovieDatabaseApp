@@ -6,29 +6,50 @@
         <div class='wrapper'>
             <div class='movie-container'>
 
-                <div>
-                    <!-- <span>
-                        <button (click)='getMovies()'>get list of movies</button>
-                    </span> -->
-
+                <div class='search-container'>
                     <form [formGroup]='form'>
-                        <input type='search' formControlName='searchField' placeholder='Enter search string'>
-                        <button (click)='searchMovie()'>Search</button>
+                        <mat-form-field>
+                            <input matInput formControlName='searchField' placeholder='string to search'>
+                        </mat-form-field>
+                        <button mat-raised-button (click)='searchMovie()'>Search</button>
                     </form>
                 </div>
 
                 <mat-tab-group [selectedIndex]='selectedIndex' (selectedTabChange)='logTabChange($event)'>
                     <mat-tab label='Movie list'>
                         <div class='movie-list'>
-                            <ul>
+                            <mat-grid-list cols="4" rowHeight="3:6">
+                                <mat-grid-tile *ngFor='let movie of _movieStorageService.movieList'>
+                                    <mat-card class='movie-card' [class.favorite]='movie.favorite'>
+                                        <div (click)='showDetails(movie.id)' class='card-info'>
+                                            <mat-card-header>
+                                                <div mat-card-avatar class='movie-header-image'></div>
+                                                <img mat-card-avatar src='https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}'>
+                                                <mat-card-title>{{movie.title}}</mat-card-title>
+                                                <mat-card-subtitle>{{movie.genre_list}}</mat-card-subtitle>
+                                            </mat-card-header>
+                                            <img mat-card-image src='https://image.tmdb.org/t/p/original/{{movie.poster_path}}'>
+                                            <mat-card-content>
+                                                <p class='card-overview'>{{movie.overview}}</p>
+                                            </mat-card-content>
+                                        </div>
+                                        <mat-card-actions>
+                                            <button mat-button (click)='addToFavorite(movie)' [color]="movie.favorite ? 'accent' : 'primary'">{{movie.favorite ? 'Remove from favorite' : 'Add to favorite'}}</button>
+                                        </mat-card-actions>
+                                    </mat-card>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+
+                            <!-- An old way -->
+                            <!-- <ul>
                                 <li *ngFor='let movie of _movieStorageService.movieList'>
                                     <div class='movie' [class.favorite]='movie.favorite'>
                                         <div (click)='showDetails(movie.id)'>
+                                            <img src='https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}'>
                                             <div class='title'>
                                                 <span>{{movie.title}}</span>
                                             </div>
                                             <div class='details-container'>
-                                                <!-- <div>genre_ids: {{movie.genre_ids}}</div> -->
                                                 <div>genre_list: {{movie.genre_list}}</div>
                                                 <div>poster_path: {{movie.poster_path}}</div>
                                                 <div>overview: {{movie.overview}}</div>
@@ -38,40 +59,35 @@
                                         <button (click)='addToFavorite(movie)'>Add to favorite</button>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </mat-tab>
                     <mat-tab label='Favorites'>
                         <div class='movie-list'>
-                            <ul>
-                                <li *ngFor='let movie of _favService.favoriteList'>
-                                    <div class='movie' (click)='showDetails(movie.id)' [class.favorite]='movie.favorite'>
-                                        <div class='title'>
-                                            <span>{{movie.title}}</span>
+                            <mat-grid-list cols="4" rowHeight="3:6">
+                                <mat-grid-tile *ngFor='let movie of _favService.favoriteList'>
+                                    <mat-card class='movie-card' [class.favorite]='movie.favorite'>
+                                        <div (click)='showDetails(movie.id)' class='card-info'>
+                                            <mat-card-header>
+                                                <div mat-card-avatar class='movie-header-image'></div>
+                                                <img mat-card-avatar src='https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}'>
+                                                <mat-card-title>{{movie.title}}</mat-card-title>
+                                                <mat-card-subtitle>{{movie.genre_list}}</mat-card-subtitle>
+                                            </mat-card-header>
+                                            <img mat-card-image src='https://image.tmdb.org/t/p/original/{{movie.poster_path}}'>
+                                            <mat-card-content>
+                                                <p class='card-overview'>{{movie.overview}}</p>
+                                            </mat-card-content>
                                         </div>
-                                        <div class='details-container'>
-                                            <!-- <div>genre_ids: {{movie.genre_ids}}</div> -->
-                                            <div>genre_list: {{movie.genre_list}}</div>
-                                            <div>poster_path: {{movie.poster_path}}</div>
-                                            <div>overview: {{movie.overview}}</div>
-                                            <div>vote_average: {{movie.vote_average}}</div>
-                                        </div>
-                                        <button (click)='addToFavorite(movie)'>Add to favorite</button>
-                                    </div>
-                                </li>
-                            </ul>
+                                        <mat-card-actions>
+                                            <button mat-button (click)='addToFavorite(movie)' [color]="movie.favorite ? 'accent' : 'primary'">{{movie.favorite ? 'Remove from favorite' : 'Add to favorite'}}</button>
+                                        </mat-card-actions>
+                                    </mat-card>
+                                </mat-grid-tile>
+                            </mat-grid-list>
                         </div>
                     </mat-tab>
                 </mat-tab-group>
-
-                <!-- <div class='panel'>
-                    <button (click)='setDefaultPage(true)'>Movie list</button>
-                    <button (click)='setDefaultPage(false)'>Favorites</button>
-                </div> -->
-
-                <!-- <div class='add-new-container'>
-                    <button mat-raised-button class='add-new' color='primary' (click)='openDialog(undefined)'>Add new Movie</button>
-                </div> -->
             </div>
         </div>
     </div>

@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatTabsModule, MatDialogModule, MatCardModule, MatButtonModule } from '@angular/material';
+// tslint:disable-next-line:max-line-length
+import { MatTabsModule, MatDialogModule, MatCardModule, MatButtonModule, MatGridListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { DialogDetailsComponent } from '@app/dialogs/dialog-details/dialog-details.component';
 
 @NgModule({
@@ -23,7 +24,10 @@ import { DialogDetailsComponent } from '@app/dialogs/dialog-details/dialog-detai
         MatTabsModule,
         MatDialogModule,
         MatCardModule,
-        MatButtonModule
+        MatButtonModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
     providers: [],
     bootstrap: [AppComponent],
