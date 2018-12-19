@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$bgBodyColor: #ffffff;
+$anchorColor: #17840b;
+$debugMode: 'true';
+$gridHeaderColor: #4a4a4a;
+$gridContentColor: none;
+$gridFooterColor: none;
+// Debuging for grid
+// $gridHeaderColor: #19d5f7;
+// $gridContentColor: #fc8ff6;
+// $gridFooterColor: #7ae6a9;
+html,
+body,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+body {
+    background-color: $bgBodyColor;
+    color: #333;
+    width: 100%;
+}
+
+a,
+a:focus,
+a:hover {
+    color: $anchorColor;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+// CSS Grid site template with sticky footer (https://codepen.io/Cl3r1k/pen/WdbRER)
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.grid-container {
+    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr auto;
+    // grid-gap: 5px;
+    margin: 0;
+    .header {
+        grid-column: span 12;
+        padding: 0px 30px;
+        color: white;
+        background-color: $gridHeaderColor;
+        .header-title {
+            display: inline-block;
+        }
+    }
+    .content {
+        grid-column: span 12;
+        background-color: $gridContentColor;
+        // padding: 10px 0;
+    }
+    .footer {
+        text-align: center;
+        background-color: $gridFooterColor;
+        grid-column: span 12;
+        padding-top: 15px;
+        padding-bottom: 5px;
+        p {
+            font-weight: 600;
+        }
+        img {
+            vertical-align: middle;
+        }
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+.icon-spoon-knife {
+    font-size: 40px;
+    margin-bottom: -12px;
+    margin-right: 5px;
+    color: #dff0d8;
+}
+
+.icon-receipt {
+    font-size: 22px;
+    margin-bottom: -5px;
+    color: #1b8fb1;
+}
+
+// Styles for text
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+.full-width {
+    width: 100%;
+    textarea {
+        height: 70px;
+    }
+}

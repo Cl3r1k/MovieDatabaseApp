@@ -1,0 +1,152 @@
+.details-dialog {
+    font-family: 'Helvetica Neue', Helvetica, 'Arimo', Arial, sans-serif;
+    margin-top: -10px;
+    .dialog-header {
+        color: #0b81b4;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        .account-trigger {
+            grid-column: 1/2;
+            cursor: pointer;
+            padding: 5px 15px 10px 15px;
+            &.active {
+                cursor: default;
+            }
+        }
+        .security-trigger {
+            grid-column: 3/4;
+            cursor: pointer;
+            padding: 5px 15px 10px 15px;
+            &.active {
+                cursor: default;
+            }
+        }
+        .dialog__close-btn {
+            grid-column: 12/13;
+            justify-self: end;
+            color: #777;
+            font: 14px/100% arial, sans-serif;
+            text-decoration: none;
+            text-shadow: 0 1px 0 #fff;
+            cursor: pointer;
+            &:after {
+                content: '✖'; // UTF-8 symbol
+            }
+        }
+    }
+    hr {
+        margin: 0px auto 0px auto;
+    }
+    .dialog-content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: start;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .img-card {
+            grid-column: 1/7;
+            padding-bottom: 0px;
+        }
+        .content-card {
+            grid-column: 7/13;
+            margin-left: 5px;
+            .main-content {
+                div {
+                    padding-top: 10px;
+                    .overview,
+                    .genres,
+                    .vote,
+                    .budget {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        // .account-tab-container {
+        //     grid-column: span 12;
+        //     display: grid;
+        //     grid-template-columns: repeat(12, 1fr);
+        //     align-items: start;
+        //     .name-container,
+        //     .email-container {
+        //         grid-column: span 12;
+        //         display: grid;
+        //         grid-template-columns: repeat(12, 1fr);
+        //         padding: 5px 0px 5px 0px;
+        //         align-items: center;
+        //         &.extra-padding-bottom {
+        //             padding-bottom: 30px;
+        //         }
+        //         .name-label,
+        //         .email-label {
+        //             grid-column: 1/4;
+        //             // margin: auto;
+        //             // background-color: #44a2ca; // For Debug
+        //             padding: 10px 0 10px 0;
+        //         }
+        //         .name-value,
+        //         .email-value {
+        //             grid-column: 4/9;
+        //             // margin: auto;
+        //             // background-color: #44ca87; // For Debug
+        //             overflow: hidden;
+        //         }
+        //         .name-new-value,
+        //         .email-new-value {
+        //             grid-column: 4/9;
+        //             // margin: auto;
+        //             // background-color: #44ca56; // For Debug
+        //             // height: 50px;
+        //         }
+        //         .change-button {
+        //             grid-column: 9/11;
+        //             margin: auto;
+        //             // background-color: #5aca44; // For Debug
+        //             color: #797979;
+        //             cursor: pointer;
+        //         }
+        //         .save-button {
+        //             grid-column: 9/11;
+        //             margin: auto;
+        //             // background-color: #9bca44; // For Debug
+        //         }
+        //     }
+        // }
+        // .security-tab-container {
+        //     grid-column: span 12;
+        //     display: grid;
+        //     grid-template-columns: repeat(12, 1fr);
+        //     align-items: start;
+        //     .password-container {
+        //         grid-column: span 12;
+        //         display: grid;
+        //         grid-template-columns: repeat(12, 1fr);
+        //         .current-password,
+        //         .new-password,
+        //         .new-password-confirm {
+        //             grid-column: span 8;
+        //             // height: 50px;
+        //             &.extra-padding-bottom {
+        //                 padding-bottom: 10px;
+        //             }
+        //         }
+        //     }
+        // }
+    }
+    .dialog-actions {
+        padding-top: 0px;
+        a {
+            &:focus,
+            &:hover {
+                color: initial;
+                font-weight: initial;
+            }
+        }
+    }
+}
+
+.active {
+    color: #797979;
+    border-bottom: 3px solid #b4b4b4;
+}

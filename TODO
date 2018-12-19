@@ -8,26 +8,54 @@ Commit message:
 Todos:
     New:
         Current:
+            ✔ При реализации задания необходимо использовать Angular 6 @done(18-12-18 10:52)
 
+        Нужно написать одностраничное приложения (SPA) для просмотра фильмов с помощью The Movie Database API:
+            ☐ При открытии приложения, должен отображаться список популярных фильмов с пагинацией или динамической подгрузкой (на выбор). <========================================================= CURRENT TASK
+            ☐ Также на странице должно быть поле для поиска.
+                ☐ Когда вы вводите туда какой-либо текст, должны отобразиться фильмы которые ему соответствуют.
+            ☐ Для каждого фильма в списке должен отображаться список жанров, к которым он принадлежит.
+            ☐ При клике на карточку с фильмом, должна быть показана страница с детальной информацией об этом фильме
+                ☐ и списком рекомендованных или похожих (можно и то, и то) фильмов к нему.
+            ☐ Также реализуйте возможность добавлять фильмы в избранное как со списка,
+                ☐ так и на странице с отдельным фильмом.
+                ☐ Список таких фильмов сохраняйте локально (localStorage, например).
+            ☐ Предусмотрите просмотр списка с избранными фильмами где-то в приложении
+                ☐ и удаление из избранного.
+                ☐ Также предусмотрите отображение на карточке с фильмом и его странице информации о том, что этот фильм добавлен в избранное.
+            ☐ Верстка и оформление страниц остается на ваше усмотрение.
+            ☐ Также приветствует развернутое приложение на одном из общедоступных сервисов. (например,GitHub, Heroku https://www.heroku.com/, openshift https://www.openshift.com/)
+            ☐ Код должен быть выложен на сервисе GitHub с описание установки и развертывания приложения не позднее `21.12.2018`
+            `Если вам необходимо больше или меньше времени, то обязательно сообщите вашу оценку.`
+            `Хотелось бы получить от Вас оценку времени на выполнение этого задания перед его началом.`
+
+
+        ✔ Update Readme.md @done(18-12-18 10:43)
+        ✔ Add absolute paths `@app` and `@env` to 'tsconfig.json' @done(18-12-18 10:44)
+
+        ☐ Correct e2e test
+
+        ☐ Deploy on gh-pages
+
+
+        Some usefull links with docs and API:
+            `https://developers.themoviedb.org/3`
+            `https://developers.themoviedb.org/3/movies/get-popular-movies`
+            `https://developers.themoviedb.org/3/search/search-movies`
+            `https://developers.themoviedb.org/3/genres`
+            `https://developers.themoviedb.org/3/movies/get-movie-details`
+            `https://developers.themoviedb.org/3/movies/get-movie-recommendations`
+
+
+
+        Delayed:
             ☐ Add spinner before Angular main component loaded (use `https://jsfiddle.net/Cl3r1k/hyqdzgfn/`)
             ☐ Add footer (preferably fixed bottom)
                 ☐ Steaky-footer on CSS Grid (look here `https://codepen.io/matuzo/pen/JOyzOj?editors=1100`)
 
-        ☐ Update Readme.md and .gitignore
-
-        ☐ Add absolute paths `@app` and `@env` to 'tsconfig.json'
-        ☐ Add autoincremented build info in the header of the app
-        
-
-        ☐ Correct e2e test
-        ☐ Write Unit tests
-
-        ☐ Deploy on gh-pages
-
-        Some ideas from:
-            `https://docs.google.com/spreadsheets/d/1PtRNZ9u5_RhMGx2u3s6VCn3JqmnNH59iq4pUx6TPcmU/edit#gid=0`
-            `https://whattomine.com`
-            `https://www.coincalculators.io/`
+        Optional:
+            ☐ Add autoincremented build info in the header of the app
+            ☐ Write Unit tests
             
     Done:
         

@@ -1,0 +1,89 @@
+<div class='details-dialog'>
+    <div class='dialog-header'>
+        <!-- <div class='account-trigger' [class.active]='isFirstTab' (click)='changeCurrentTabAccount(true)'>Account</div>
+            <div class='security-trigger' [class.active]='!isFirstTab' (click)='changeCurrentTabAccount(false)'>Security</div> -->
+        <button (click)='dialogRef.close()' class='dialog__close-btn'></button>
+    </div>
+    <!-- <hr> -->
+
+    <div mat-dialog-content class='dialog-content'>
+        <mat-card class='img-card'>
+            <img mat-card-image src="https://image.tmdb.org/t/p/original/{{data.poster_path}}">
+        </mat-card>
+        <mat-card class='content-card'>
+            <mat-card-header>
+                <img mat-card-avatar src="https://image.tmdb.org/t/p/original/{{data.backdrop_path}}">
+                <mat-card-title>{{data.title}}</mat-card-title>
+                <mat-card-subtitle>{{data.tagline}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class='main-content'>
+                <div>
+                    <p class='overview'>Overview</p>
+                    <p>{{data.overview}}</p>
+                </div>
+                <div>
+                    <p><span class='genres'>Genres: </span>{{genres}}</p>
+                </div>
+                <div>
+                    <p> <span class='vote'>Average vote: </span>{{data.vote_average}}</p>
+                </div>
+                <div>
+                    <p> <span class='budget'>Budget: </span>{{data.budget}}</p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <!-- <div class='account-tab-container' *ngIf='isFirstTab'>
+                <div class='name-container'>
+                    <span class='name-label'>Name</span>
+                    <span class='name-value' *ngIf='!editNameState'>{{formPassword.get('name').value}}</span>
+                    <mat-form-field class='name-new-value' *ngIf='editNameState'>
+                        <input type='text' matInput formControlName='name' placeholder='Account Name' autocomplete='name'>
+                        <mat-error *ngIf="formPassword.get( 'name').hasError( 'required') && formPassword.get( 'name').touched ">You must enter a value</mat-error>
+                    </mat-form-field>
+                    <button class='change-button' (click)='changeName(true)' *ngIf='!editNameState'>Change</button>
+                    <button mat-raised-button class='save-button' (click)='changeName(false)' *ngIf='editNameState' [disabled]="formPassword.get( 'name').invalid ">Save</button>
+                </div>
+                <div class='email-container extra-padding-bottom'>
+                    <span class='email-label'>Email</span>
+                    <span class='email-value' *ngIf='!editEmailState'>{{formPassword.get('email').value}}</span>
+                    <mat-form-field class='email-new-value' *ngIf='editEmailState'>
+                        <input type='text' matInput formControlName='email' placeholder='Account Email' autocomplete='email'>
+                        <mat-error *ngIf="formPassword.get( 'email').hasError( 'required') && formPassword.get( 'email').touched ">You must enter a value</mat-error>
+                        <mat-error *ngIf="formPassword.get( 'email').hasError( 'email') && formPassword.get( 'email').touched ">Must be a valid email address</mat-error>
+                    </mat-form-field>
+                    <button class='change-button' (click)='changeEmail(true)' *ngIf='!editEmailState'>Change</button>
+                    <button mat-raised-button class='save-button' (click)='changeEmail(false)' *ngIf='editEmailState' [disabled]="formPassword.get( 'email').invalid ">Save</button>
+                </div>
+            </div> -->
+
+        <!-- <div class='security-tab-container' *ngIf='!isFirstTab'>
+                <div class='password-container'>
+                    <input type='text' formControlName='passwordCurrent' placeholder='Account Name' autocomplete='name' style='display: none;'>
+                    <mat-form-field class='current-password'>
+                        <input type='password' matInput formControlName='passwordCurrent' placeholder='Current password' autocomplete='passwordCurrent'>
+                        <mat-error *ngIf="formPassword.get( 'passwordCurrent').hasError( 'required') && formPassword.get( 'passwordCurrent').touched ">You must enter a value</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class='new-password'>
+                        <input [type]="hidePassword ? 'password' : 'text' " matInput formControlName='password' placeholder='New password' autocomplete='new-password'>
+                        <mat-icon matSuffix (click)="hidePassword=! hidePassword ">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-error *ngIf="formPassword.get( 'password').hasError( 'required') && formPassword.get( 'password').touched ">You must enter a value</mat-error>
+                        <mat-error *ngIf="formPassword.get( 'password').hasError( 'minlength') && formPassword.get( 'password').touched ">Password must be at least 6 characters</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class='new-password-confirm extra-padding-bottom'>
+                        <input [type]="hidePasswordConfirm ? 'password' : 'text' " matInput formControlName='passwordConfirm' placeholder='Confirm password' autocomplete='new-password'>
+                        <mat-icon matSuffix (click)="hidePasswordConfirm=! hidePasswordConfirm ">{{hidePasswordConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-error *ngIf="formPassword.get( 'passwordConfirm').hasError( 'required') && formPassword.get( 'passwordConfirm').touched ">You must enter a value</mat-error>
+                        <mat-error *ngIf="formPassword.controls.passwordConfirm.errors?.mustMatch && formPassword.get( 'passwordConfirm').touched ">Password does not match</mat-error>
+                    </mat-form-field>
+                </div>
+            </div> -->
+    </div>
+
+    <!-- <hr class='bottom-line'> -->
+    <div mat-dialog-actions class='dialog-actions'>
+        <!-- <a href='/pro' target='_blank' mat-raised-button *ngIf='isFirstTab'>Upgrade</a> -->
+        <!-- for common form look example `www.codiodes.com/match-password-validation/` -->
+        <!-- <button mat-raised-button (click)='changePassword()' class='save-password-btn' [disabled]='!formPassword.valid' *ngIf='!isFirstTab'>Save</button> -->
+        <button mat-raised-button [color]='favColor' (click)='addToFavorite()'>{{favText}}</button>
+    </div>
+</div>
