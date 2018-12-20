@@ -9,6 +9,7 @@ import { Movie } from '@app/movie';
 export class MovieStorageService {
 
     movieList: Movie[] = [];
+    genres: Object = {};
 
     constructor() { }
 

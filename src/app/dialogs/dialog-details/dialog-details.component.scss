@@ -57,82 +57,18 @@
                     .overview,
                     .genres,
                     .vote,
-                    .budget {
+                    .budget,
+                    .rec-title {
                         font-weight: bold;
+                    }
+                    &.recomendations {
+                        p {
+                            margin: 0 0 3px 0;
+                        }
                     }
                 }
             }
         }
-        // .account-tab-container {
-        //     grid-column: span 12;
-        //     display: grid;
-        //     grid-template-columns: repeat(12, 1fr);
-        //     align-items: start;
-        //     .name-container,
-        //     .email-container {
-        //         grid-column: span 12;
-        //         display: grid;
-        //         grid-template-columns: repeat(12, 1fr);
-        //         padding: 5px 0px 5px 0px;
-        //         align-items: center;
-        //         &.extra-padding-bottom {
-        //             padding-bottom: 30px;
-        //         }
-        //         .name-label,
-        //         .email-label {
-        //             grid-column: 1/4;
-        //             // margin: auto;
-        //             // background-color: #44a2ca; // For Debug
-        //             padding: 10px 0 10px 0;
-        //         }
-        //         .name-value,
-        //         .email-value {
-        //             grid-column: 4/9;
-        //             // margin: auto;
-        //             // background-color: #44ca87; // For Debug
-        //             overflow: hidden;
-        //         }
-        //         .name-new-value,
-        //         .email-new-value {
-        //             grid-column: 4/9;
-        //             // margin: auto;
-        //             // background-color: #44ca56; // For Debug
-        //             // height: 50px;
-        //         }
-        //         .change-button {
-        //             grid-column: 9/11;
-        //             margin: auto;
-        //             // background-color: #5aca44; // For Debug
-        //             color: #797979;
-        //             cursor: pointer;
-        //         }
-        //         .save-button {
-        //             grid-column: 9/11;
-        //             margin: auto;
-        //             // background-color: #9bca44; // For Debug
-        //         }
-        //     }
-        // }
-        // .security-tab-container {
-        //     grid-column: span 12;
-        //     display: grid;
-        //     grid-template-columns: repeat(12, 1fr);
-        //     align-items: start;
-        //     .password-container {
-        //         grid-column: span 12;
-        //         display: grid;
-        //         grid-template-columns: repeat(12, 1fr);
-        //         .current-password,
-        //         .new-password,
-        //         .new-password-confirm {
-        //             grid-column: span 8;
-        //             // height: 50px;
-        //             &.extra-padding-bottom {
-        //                 padding-bottom: 10px;
-        //             }
-        //         }
-        //     }
-        // }
     }
     .dialog-actions {
         padding-top: 0px;

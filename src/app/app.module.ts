@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 // tslint:disable-next-line:max-line-length
-import { MatTabsModule, MatDialogModule, MatCardModule, MatButtonModule, MatGridListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatTabsModule, MatDialogModule, MatCardModule, MatButtonModule, MatGridListModule, MatFormFieldModule, MatInputModule, MatPaginatorModule } from '@angular/material';
 import { DialogDetailsComponent } from '@app/dialogs/dialog-details/dialog-details.component';
 
 @NgModule({
@@ -27,7 +27,8 @@ import { DialogDetailsComponent } from '@app/dialogs/dialog-details/dialog-detai
         MatButtonModule,
         MatGridListModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatPaginatorModule
     ],
     providers: [],
     bootstrap: [AppComponent],

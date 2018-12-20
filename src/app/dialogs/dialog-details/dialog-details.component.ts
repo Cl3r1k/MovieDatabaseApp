@@ -5,6 +5,7 @@ import { Movie } from '@app/movie';
 
 // Services
 import { FavoritesService } from '@app/_services/favorites-service';
+import { HttpService } from '@app/_services/http-service';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
@@ -18,6 +19,7 @@ export class DialogDetailsComponent implements OnInit {
     consoleTextColorComponent = 'color: cadetblue;';
 
     genres: string[] = [];
+    recomendations: string[] = [];
     favColor = 'primary';
     favText = 'Add to favorite';
     isFavorite = true;
@@ -25,21 +27,29 @@ export class DialogDetailsComponent implements OnInit {
     constructor(
         public dialogRef: MatDialogRef<DialogDetailsComponent>,
         @Inject(MAT_DIALOG_DATA) public data,
-        public _favService: FavoritesService
+        public _favService: FavoritesService,
+        private _httpService: HttpService
     ) { }
 
     ngOnInit() {
-        console.log('%cdata: ', this.consoleTextColorComponent, this.data);
         this.data['genres'].map(val => {
             this.genres.push(val['name']);
         });
 
         this._favService.favoriteList.map(movie => {
-            console.log('%cmovie.id and data.id', this.consoleTextColorComponent, movie.id, this.data.id);
             if (movie.id === this.data.id) {
                 this.favColor = 'accent';
                 this.favText = 'Remove from favorite';
             }
+        });
+
+        this._httpService.getRecomendations(this.data.id, 1).subscribe(response => {
+            console.log('%cresponse in recom:', this.consoleTextColorComponent, response);
+            response.slice(0, 5).map(val => {
+                this.recomendations.push(val.title);
+            });
+
+            console.log('%crecomendations:', this.consoleTextColorComponent, this.recomendations);
         });
     }
 

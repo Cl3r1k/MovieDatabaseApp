@@ -28,7 +28,7 @@
                                                 <mat-card-title>{{movie.title}}</mat-card-title>
                                                 <mat-card-subtitle>{{movie.genre_list}}</mat-card-subtitle>
                                             </mat-card-header>
-                                            <img mat-card-image src='https://image.tmdb.org/t/p/original/{{movie.poster_path}}'>
+                                            <img mat-card-image src='https://image.tmdb.org/t/p/w300{{movie.poster_path}}'>
                                             <mat-card-content>
                                                 <p class='card-overview'>{{movie.overview}}</p>
                                             </mat-card-content>
@@ -88,6 +88,8 @@
                         </div>
                     </mat-tab>
                 </mat-tab-group>
+
+                <mat-paginator [length]="_httpService.totalPages" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageChange($event)"></mat-paginator>
             </div>
         </div>
     </div>
